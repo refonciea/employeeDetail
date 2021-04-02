@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+        <!--bootstrap-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+        <style>
+
+            .input-group-append {
+                border-left: 0;
+            }
+            .container{
+                padding: 30px 20px;
+                width: 400px;
+                background: white;
+                margin-top: 85px;
+                /*                opacity: 0.5;*/
+            }
+
+            body{
+                background-image: url("https://cdn.pixabay.com/photo/2016/11/02/22/53/background-1792968_960_720.jpg");
+            }
+            button{
+                font-size: 16px;
+                color:white ;
+                font-weight: bold;
+                background:#5fb3ab;
+                border: none;
+                min-width: 140px;
+            }
+            .clickable{
+                cursor:pointer;
+            }
+            .modal-footer{
+                border: none;
+                display: block;
+                 padding: 0;
+            }
+            #message{
+                margin:0;
+            }
+
+        </style>
+
+
+
+    </head>
+    <body>
+        <div class="modal fade" id="modal" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p id="message" class="text-center"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-lg btn-block"  data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container border">
+
+            <form >
+
+                <h2>Sign Up</h2>
+                <p>Please fill in this form to create an account!</p>
+                <hr>
+                <div class="form-group  ">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-user"></span>
+                            </span>                    
+                        </div>
+                        <input type="text" class="form-control" id="firstname" name="firstname" autocomplete="off" placeholder="First Name" >
+                    </div>
+                    <div id="errorfirstname" style="color:red;"> </div>         
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-user"></span>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="lastname" name="lastname" autocomplete="off" placeholder="Last Name" >
+                    </div>
+                    <span id="errorlastname" style="color:red"></span>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-envelope"></span>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" id="username" autocomplete="off" name="username" placeholder="Email"  >
+                    </div>
+                    <span id="errorusername" style="color:red" ></span>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-lock"></span>
+                            </span>                    
+                        </div>
+                        <input type="password" class="form-control border-right-0" id="password" name="password" placeholder="Password" >                        
+                        <div class="input-group-append" >
+                            <span class="input-group-text bg-white">
+                                <span class="fa fa-eye clickable"  onclick="showHide()"></span>
+                            </span>                  
+                        </div>
+                    </div>
+                    <span id="errorpassword" style="color:red" ></span>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-key"></i>
+                            </span>                    
+                        </div>
+                        <input type="password" class="form-control border-right-0" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" >                        
+                        <div class="input-group-append ">
+                            <span class="input-group-text bg-white">
+                                <span class="fa fa-eye clickable" onclick="passwordshow()"></span>
+                            </span>                  
+                        </div>
+                    </div>
+                    <span id="errorconfirmpassword" style="color:red" ></span>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <button type="button" class="btn btn-lg" onclick="registerProcess()" >Sign Up</button>
+
+                </div>
+            </form> 
+            <div class="text-center">Already have an account? <a href="http://localhost/Nila/public_html/loginform.html">Login here</a></div>
+        </div>
+        <script src="register.js"></script>
+        <script src="login.js"></script>
+    </body>
+
+</html>
